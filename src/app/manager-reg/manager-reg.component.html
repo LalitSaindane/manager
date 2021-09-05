@@ -1,0 +1,85 @@
+<div class="row justify-content-center login">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="managerRegForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" class="form-control" />
+            <div class="text-left" *ngIf="managerRegForm.controls.email?.errors && managerRegForm.controls.email?.touched ">
+              <div class="text-danger m-t-5" *ngIf="managerRegForm.controls.email.errors.required; else invalidEmail">
+                Email is required
+              </div>
+              <ng-template #invalidEmail>
+                <div class="text-danger m-t-5" *ngIf="managerRegForm.controls.email.errors.pattern">
+                  Please enter a valid email address
+                </div>
+              </ng-template>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" />
+            <div class="text-left" *ngIf="managerRegForm.controls.firstName?.errors && managerRegForm.controls.firstName?.touched ">
+                <div class="text-danger m-t-5" *ngIf="managerRegForm.controls.firstName.errors.required">
+                  First Name is required
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" />
+            <div class="text-left" *ngIf="managerRegForm.controls.lastName?.errors && managerRegForm.controls.lastName?.touched ">
+                <div class="text-danger m-t-5" *ngIf="managerRegForm.controls.lastName.errors.required">
+                  Last Name is required
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" />
+            <div class="text-left" *ngIf="managerRegForm.controls.password?.errors && managerRegForm.controls.password?.touched ">
+                <div class="text-danger m-t-5" *ngIf="managerRegForm.controls.password.errors.required">
+                  Password is required
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" formControlName="address" class="form-control" />
+            <div class="text-left" *ngIf="managerRegForm.controls.address?.errors && managerRegForm.controls.address?.touched ">
+                <div class="text-danger m-t-5" *ngIf="managerRegForm.controls.address.errors.required">
+                    Address is required
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Birthdate</label>
+            <input type="text" class="form-control" [displayMonths]="1" [navigation]="'select'" [outsideDays]="'visible'"
+            ngbDatepicker  #dp="ngbDatepicker" (focus)="dp.toggle()" placement="top"  formControlName="birthdate">
+            <div class="text-left" *ngIf="managerRegForm.controls.birthdate?.errors && managerRegForm.controls.birthdate?.touched ">
+                <div class="text-danger m-t-5" *ngIf="managerRegForm.controls.birthdate.errors.required">
+                    Birthdate is required
+                </div>
+            </div>
+          </div>
+          <ng-container *ngIf="isEmailIdInvalid">
+            <div class="form-group">
+              <span class="message">Email Id alreay exist</span>
+              <br>
+              <span class="message">Please provide another emailId</span>
+            </div>
+          </ng-container>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" [disabled]="!managerRegForm.valid">
+              <div>Submit</div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

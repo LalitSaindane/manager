@@ -1,0 +1,77 @@
+<div class="table">
+  <ngx-datatable [rows]="rows" [ngClass]="tableStyle">
+
+    <ngx-datatable-column [width]="50">
+      <ng-template ngx-datatable-header-template>
+        <span>Id</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.id}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [width]="100">
+      <ng-template ngx-datatable-header-template>
+        <span>First Name</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.firstName}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [width]="100">
+      <ng-template ngx-datatable-header-template>
+        <span>Last Name</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.lastName}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [width]="100">
+      <ng-template ngx-datatable-header-template>
+        <span>Address</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.address}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [width]="100">
+      <ng-template ngx-datatable-header-template>
+        <span>Birthdate</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.birthdate}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [width]="100">
+      <ng-template ngx-datatable-header-template>
+        <span>Mobile</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.mobile}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [width]="100">
+      <ng-template ngx-datatable-header-template>
+        <span>City</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.city}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column [width]="150">
+      <ng-template ngx-datatable-header-template>
+        <span>Operations</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <button class="btn btn-primary btn-sm" (click)="updateEmployee(row.id)">Update</button>
+        <button class="btn btn-danger btn-sm" (click)="deleteEmployee(row.id)">Delete</button>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
