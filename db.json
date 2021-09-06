@@ -8,7 +8,35 @@
       "address": "h",
       "birthdate": "2021-9-1",
       "id": 49
+    },
+    {
+      "email": "abc@xyz.com",
+      "firstName": "lkj",
+      "lastName": "jkh",
+      "password": "U2FsdGVkX19gs+l4e3c87Xtq2FgFOTiinkjh7l+ZTfM=",
+      "address": "klj",
+      "birthdate": "2021-9-1",
+      "id": 99
     }
   ],
-  "employee": []
+  "employee": [
+    {
+      "firstName": "rl",
+      "lastName": "lkj",
+      "address": "klj",
+      "birthdate": "2012-2-1",
+      "mobile": "1234567890",
+      "city": "Pune",
+      "id": 58
+    },
+    {
+      "firstName": "13",
+      "lastName": "hg",
+      "address": "jf",
+      "birthdate": "2021-9-1",
+      "mobile": "1234567890",
+      "city": "Pune",
+      "id": 55
+    }
+  ]
 }
